@@ -26,15 +26,23 @@ function Game1() {
       toast.error("Game Over");
       setStartGame(true);
     } else if (userGuess < randomNum) {
-      toast.error("Nilai Inputan Terlalu Kecil");
+      toast.error("Nilai Inputan Terlalu Kecil", {
+        theme: "dark",
+      });
     } else if (userGuess === randomNum) {
       setChance(4);
-      toast.success("Congratulation!! Anda Menang");
+      toast.success("Congratulation!! Anda Menang", {
+        theme: "dark",
+      });
       setStartGame(true);
-    } else if (userGuess > randomNum){
-      toast.error("Nilai Inputan Terlalu Besar");
-    }else{
-      toast.error("Input tidak Boleh Kosong")
+    } else if (userGuess > randomNum) {
+      toast.error("Nilai Inputan Terlalu Besar", {
+        theme: "dark",
+      });
+    } else {
+      toast.error("Input tidak Boleh Kosong", {
+        theme: "dark",
+      });
     }
 
     setGuess("");
@@ -43,9 +51,9 @@ function Game1() {
   const reset = () => {
     setStartGame(true);
     setMessage("Silahkan Mulai Permainan Anda");
-    setChance(0)
+    setChance(0);
     setRandomNum(generateNum());
-  }
+  };
 
   return (
     <div className="p-5">
@@ -74,7 +82,9 @@ function Game1() {
                 </div>
               ) : (
                 <div className="mt-4">
-                  <label className="form-label d-block text-start mt-4">Input Angka</label>
+                  <label className="form-label d-block text-start mt-4">
+                    Input Angka
+                  </label>
                   <input
                     type="number"
                     className="form-control"
@@ -87,9 +97,7 @@ function Game1() {
                     Nilai Aslinya Adalah {randomNum}
                   </p>
 
-                  <p className="text-start mt-4">
-                    Jumlah Tebakan {chance}
-                  </p>
+                  <p className="text-start mt-4">Jumlah Tebakan {chance}</p>
 
                   {chance < 4 ? (
                     <div className="d-flex justify-content-start mt-3">
@@ -99,7 +107,9 @@ function Game1() {
                     </div>
                   ) : (
                     <div className="d-flex justify-content-start mt-3">
-                      <button className="btn btn-danger" onClick={reset}>Reset</button>
+                      <button className="btn btn-danger" onClick={reset}>
+                        Reset
+                      </button>
                     </div>
                   )}
                 </div>

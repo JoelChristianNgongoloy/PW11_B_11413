@@ -68,7 +68,7 @@ const Game2 = () => {
                   Pilih Priority
                 </label>
                 <select
-                  class="form-select"
+                  className="form-select"
                   aria-label="Default select example"
                   value={priority}
                   onChange={(e) => setPriority(e.target.value)}
@@ -93,7 +93,7 @@ const Game2 = () => {
         <div className="row row-cols-3 mt-4">
           {list.map((item, index) => (
             <div
-              class="card mb-3"
+              className="card mb-3"
               style={{
                 maxWidth: "350px",
                 marginRight: "20px",
@@ -103,7 +103,7 @@ const Game2 = () => {
               key={index}
             >
               <div
-                class="card-header"
+                className="card-header"
                 style={{
                   backgroundColor:
                     item.priority === "urgent"
@@ -121,9 +121,9 @@ const Game2 = () => {
                   ? "Biasa Saja"
                   : "Normal"}
               </div>
-              <div class="card-body">
-                <h5 class="card-title">{item.nama}</h5>
-                <p class="card-text">{item.catatan}</p>
+              <div className="card-body">
+                <h5 className="card-title">{item.nama}</h5>
+                <p className="card-text">{item.catatan}</p>
               </div>
             </div>
           ))}
